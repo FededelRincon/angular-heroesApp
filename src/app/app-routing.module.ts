@@ -5,6 +5,12 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
+    path: 'auth',
+    // component: 
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
+    // loadChildren: () => import('./auth/auth-routing.module').then( m => m.AuthRoutingModule )  //si lo hiciera con otro modulo intermedio...
+  },
+  {
     path: '404',
     component: ErrorPageComponent,
     // pathMatch: 'full',
@@ -13,7 +19,7 @@ const routes: Routes = [
     path: '**',
     // component: ErrorPageComponent,
     redirectTo: '404'
-  }
+  },
 ]
 
 
