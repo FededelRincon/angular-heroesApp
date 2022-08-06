@@ -11,6 +11,10 @@ const routes: Routes = [
     // loadChildren: () => import('./auth/auth-routing.module').then( m => m.AuthRoutingModule )  //si lo hiciera con otro modulo intermedio...
   },
   {
+    path: 'heroes',
+    loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesModule )
+  },
+  {
     path: '404',
     component: ErrorPageComponent,
     // pathMatch: 'full',
