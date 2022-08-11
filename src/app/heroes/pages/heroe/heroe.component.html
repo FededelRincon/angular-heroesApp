@@ -6,8 +6,44 @@
 </mat-grid-list>
 
 
-<<ng-template #divHeroe>
-  {{ heroe | json }}
+<ng-template #divHeroe>
+  <!-- {{ heroe | json }} -->
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="30px"
+  >
+    <div fxFlex="50">
+      <h1>{{ heroe.superhero }} <small> - {{ heroe.alter_ego }}</small> </h1>
+      <mat-divider></mat-divider>
+      <br>
+      <img [src]="heroe | imagen" />
+    </div>
+
+    <div fxFlex="50">
+      <h2>{{ heroe.publisher }}</h2>
+      <mat-divider></mat-divider>
+
+      <mat-list>
+        <mat-list-item> Primera aparicion: {{ heroe.first_appearance }} </mat-list-item>
+        <mat-list-item> Personajes: {{ heroe.characters }} </mat-list-item>
+        <mat-list-item> AlterEgo: {{ heroe.alter_ego }} </mat-list-item>
+        <mat-list-item> Franquicia: {{ heroe.publisher }} </mat-list-item>
+      </mat-list>
+
+      <br>
+
+      <button
+        mat-button
+        color="warn"
+        (click)="regresar()"
+      >
+        Regresar
+      </button>
+
+    </div>
+
+  </div>
 </ng-template>
 
 
