@@ -10,10 +10,10 @@ export class ListadoComponent implements OnInit {
 
   heroes: Heroe[] = [];
 
-  constructor( private heroseSerice: HeroesService ) { }
+  constructor( private heroesService: HeroesService ) { }
 
   ngOnInit(): void {
-    this.heroseSerice.getHeroes()
+    this.heroesService.getHeroes()
       .subscribe( heroes => this.heroes = heroes );
   }
 }
